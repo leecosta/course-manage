@@ -6,10 +6,40 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { StarComponent } from 'src/star/star.component';
 import { ReplacePipe } from './pipe/replace.pipe';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { RouterModule } from '@angular/router';
+import { Error404Component } from './error-404/error-404.component';
 
 @NgModule({
-  declarations: [AppComponent, CourseListComponent, StarComponent, ReplacePipe],
-  imports: [BrowserModule, FormsModule],
+  declarations: [
+    AppComponent,
+    CourseListComponent,
+    StarComponent,
+    ReplacePipe,
+    NavBarComponent,
+    Error404Component,
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    // forRoot -> assim que inicializa a app já carrega as rotas
+    RouterModule.forRoot([
+      {
+        path: '',
+        redirectTo: 'courses',
+        pathMatch: 'full',
+      },
+      {
+        path: 'courses',
+        component: CourseListComponent,
+      },
+      // ** -> quando não encontra a url
+      {
+        path: '**',
+        component: Error404Component,
+      },
+    ]),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
