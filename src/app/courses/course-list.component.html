@@ -32,7 +32,13 @@
       <td>
         <app-star [rating]="course.rating"></app-star>
       </td>
-      <td></td>
+      <td>
+        <!-- routerLink -> primeiro parâmetro url e o segundo são os parâmetros que
+        será passado através da rota -->
+        <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary"
+          >Edit</a
+        >
+      </td>
     </tr>
   </tbody>
 </table>

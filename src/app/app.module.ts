@@ -1,3 +1,4 @@
+import { CourseInfoComponent } from './courses/course.info.component';
 import { CourseListComponent } from './courses/course-list.component';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -18,6 +19,7 @@ import { Error404Component } from './error-404/error-404.component';
     ReplacePipe,
     NavBarComponent,
     Error404Component,
+    CourseInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,13 +27,17 @@ import { Error404Component } from './error-404/error-404.component';
     // forRoot -> assim que inicializa a app já carrega as rotas
     RouterModule.forRoot([
       {
+        path: 'courses',
+        component: CourseListComponent,
+      },
+      {
+        path: 'courses/info/:id',
+        component: CourseInfoComponent,
+      },
+      {
         path: '',
         redirectTo: 'courses',
         pathMatch: 'full',
-      },
-      {
-        path: 'courses',
-        component: CourseListComponent,
       },
       // ** -> quando não encontra a url
       {
