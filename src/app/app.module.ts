@@ -5,9 +5,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { StarComponent } from 'src/star/star.component';
+import { ReplacePipe } from './pipe/replace.pipe';
 
 @NgModule({
-  declarations: [AppComponent, CourseListComponent, StarComponent],
+  declarations: [AppComponent, CourseListComponent, StarComponent, ReplacePipe],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
