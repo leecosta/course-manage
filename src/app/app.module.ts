@@ -1,4 +1,4 @@
-import { CourseInfoComponent } from './courses/course.info.component';
+import { CourseInfoComponent } from './courses/course-info.component';
 import { CourseListComponent } from './courses/course-list.component';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
