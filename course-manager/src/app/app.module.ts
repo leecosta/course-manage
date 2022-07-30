@@ -6,15 +6,16 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
 import { Error404Component } from './error-404/error-404.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, Error404Component],
+  declarations: [AppComponent, Error404Component],
   imports: [
     BrowserModule,
     HttpClientModule,
     CourseModule, //Módulo de cursos
+    CoreModule,
     // forRoot -> assim que inicializa a app já carrega as rotas
     RouterModule.forRoot([
       {
