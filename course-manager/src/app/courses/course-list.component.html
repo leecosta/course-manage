@@ -35,9 +35,14 @@
       <td>
         <!-- routerLink -> primeiro parâmetro url e o segundo são os parâmetros que
         será passado através da rota -->
-        <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary"
-          >Edit</a
-        >
+        <a
+          [routerLink]="['/courses/info', course.id]"
+          class="btn btn-primary me-2"
+          >Edit
+        </a>
+        <button (click)="deleteById(course.id)" class="btn btn-danger">
+          Delete
+        </button>
       </td>
     </tr>
   </tbody>
